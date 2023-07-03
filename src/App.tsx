@@ -1,10 +1,12 @@
+import { Routes, Route } from "react-router-dom"
+
 import HomeView from "./routes/HomeView"
 
 function App() {
   return (
-    <>
-      <HomeView />
-    </>
+    <Routes>
+      <Route path="/" element={<HomeView />} />
+    </Routes>
   )
 }
 
