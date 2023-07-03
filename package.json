@@ -28,5 +28,17 @@
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
-  }
+  },
+  "description": "",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johntonnang/drawing-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johntonnang/drawing-game/issues"
+  },
+  "homepage": "https://github.com/johntonnang/drawing-game#readme"
 }
