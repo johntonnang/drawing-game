@@ -1,1 +1,3 @@
-# drawing-game
+# Drawing game
+
+Online drawing game
