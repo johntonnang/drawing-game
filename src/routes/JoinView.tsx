@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from 'react'
 function JoinView() {
-  const [userName, setUserName] = useState('');
-  const [id, setId] = useState('');
+  const [userName, setUserName] = useState('')
+  const [id, setId] = useState('')
 
   const handleSaveAndNavigate = () => {
-    window.location.href = '/lobby';
-  };
+    window.location.href = '/lobby'
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -47,7 +47,7 @@ function JoinView() {
         Join
       </button>
     </div>
-  );
+  )
 }
 
-export default JoinView;
+export default JoinView

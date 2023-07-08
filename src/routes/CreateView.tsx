@@ -1,5 +1,5 @@
 function CreateView() {
-  return <>Create </>;
+  return <>Create </>
 }
 
-export default CreateView;
+export default CreateView

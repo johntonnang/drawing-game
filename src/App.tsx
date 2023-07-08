@@ -1,10 +1,10 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'
 
-import HomeView from './routes/HomeView';
-import CreateView from './routes/CreateView';
-import JoinView from './routes/JoinView';
-import InstructionsView from './routes/InstructionsView';
-import LobbyView from './routes/LobbyView';
+import HomeView from './routes/HomeView'
+import CreateView from './routes/CreateView'
+import JoinView from './routes/JoinView'
+import InstructionsView from './routes/InstructionsView'
+import LobbyView from './routes/LobbyView'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route path="/instructions" element={<InstructionsView />} />
       <Route path="/lobby" element={<LobbyView />} />
     </Routes>
-  );
+  )
 }
 
-export default App;
+export default App

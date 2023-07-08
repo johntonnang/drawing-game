@@ -1,35 +1,35 @@
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase';
-import { useState, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase'
+import { useState, useEffect } from 'react'
 
 const LobbyView = () => {
   const handleStartGame = () => {
-    console.log('Spelet har startats');
-  };
+    console.log('Spelet har startats')
+  }
 
   const [players, setPlayers] = useState<
     {
-      name: string;
-      id: string;
+      name: string
+      id: string
     }[]
-  >([]);
-  const [roomId, setRoomId] = useState('');
+  >([])
+  const [roomId, setRoomId] = useState('')
   const fetchPost = async () => {
     await getDocs(collection(db, 'Rooms')).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         players: doc.data().players,
         roomId: doc.data().roomId,
-      }));
-      console.log(newData[0].roomId);
-      setPlayers(newData[0].players);
-      setRoomId(newData[0].roomId);
-    });
-  };
+      }))
+      console.log(newData[0].roomId)
+      setPlayers(newData[0].players)
+      setRoomId(newData[0].roomId)
+    })
+  }
 
   useEffect(() => {
-    fetchPost();
-  }, []);
+    fetchPost()
+  }, [])
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -66,7 +66,7 @@ const LobbyView = () => {
         Starta spelet
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default LobbyView;
+export default LobbyView

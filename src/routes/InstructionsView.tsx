@@ -1,5 +1,5 @@
 function InstructionsView() {
-  return <>Instruction</>;
+  return <>Instruction</>
 }
 
-export default InstructionsView;
+export default InstructionsView

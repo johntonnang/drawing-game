@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  height: 100%;
+  background-image: url(images/background-image.png);
+  background-color: #4570C6;
+  background-repeat: repeat;
+  background-size: cover;
+
+}
