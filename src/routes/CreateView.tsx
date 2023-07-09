@@ -1,5 +1,11 @@
+import CreatePage from '../components/CreatePage'
+
 function CreateView() {
-  return <>Create </>
+  return (
+    <>
+      <CreatePage />
+    </>
+  )
 }
 
 export default CreateView

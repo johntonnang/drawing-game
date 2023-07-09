@@ -9,6 +9,7 @@ export default {
       orange: '#DF9201',
       'bg-blue': '#4570C6',
       white: '#FFF',
+      black: '#000',
     },
     fontFamily: {
       gloria: ['Gloria Hallelujah', 'cursive'],
