@@ -34,39 +34,47 @@ const LobbyPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-3xl font-bold mb-4">Lobby</h1>
-        <div className="flex flex-row w-4/5 space-x-4">
-          <div className="w-1/3">
-            <h2 className="text-lg font-medium mb-2">Spelare</h2>
-            <ul className="border border-gray-300 px-3 py-2 rounded-md mb-4">
-              {players.map((player, index) => (
-                <li key={index} className="mb-2">
-                  {player.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="w-1/3">
-            <h2 className="text-lg font-medium mb-2">Spel-ID</h2>
-            <p className="border border-gray-300 px-3 py-2 rounded-md mb-4">
-              {roomId}
-            </p>
-          </div>
-          <div className="w-1/3">
-            <h2 className="text-lg font-medium mb-2">Spelregler</h2>
-            <ul className="border border-gray-300 px-3 py-2 rounded-md mb-4">
-              <li>Tid: 10 minuter</li>
-              <li>Antal rundor: 3</li>
-            </ul>
+      <div className="flex flex-col items-center min-h-screen text-white font-gloria w-full">
+        <div className="flex flex-col w-full mt-20 items-center">
+          <h1 className="text-4xl font-bold mb-4">Lobby</h1>
+          <div className="flex flex-row w-4/5 gap-10">
+            <div className="w-[20rem] h-[20rem] rounded-2xl bg-blue">
+              <h2 className="flex text-lg font-medium my-2 justify-center">
+                Players
+              </h2>
+              <ul className="px-3 py-2 mb-4">
+                {players.map((player, index) => (
+                  <li key={index} className="mb-2">
+                    {player.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="w-[20rem] h-[20rem] rounded-2xl bg-blue">
+              <h2 className="flex text-lg font-medium my-2 justify-center">
+                Game ID
+              </h2>
+              <p className="px-3 py-2 mb-4">{roomId}</p>
+              <div className="flex h-full justify-center items-center w-full">
+                <button
+                  className="bg-green text-white px-4 py-2 rounded-md"
+                  onClick={handleStartGame}
+                >
+                  Start game
+                </button>
+              </div>
+            </div>
+            <div className="w-[20rem] h-[20rem] rounded-2xl bg-blue">
+              <h2 className="flex text-lg font-medium my-2 justify-center">
+                Rules
+              </h2>
+              <ul className=" px-3 py-2 mb-4">
+                <li>Time each round: 90 seconds</li>
+                <li>Rounds: 5</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-md"
-          onClick={handleStartGame}
-        >
-          Starta spelet
-        </button>
       </div>
       <Footer />
     </>
