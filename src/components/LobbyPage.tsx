@@ -6,6 +6,7 @@ import Footer from './Footer'
 const LobbyPage = () => {
   const handleStartGame = () => {
     console.log('Spelet har startats')
+    window.location.href = '/draw'
   }
 
   const [players, setPlayers] = useState<
