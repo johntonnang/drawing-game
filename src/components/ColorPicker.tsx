@@ -22,7 +22,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="black"
             checked={selectedColor === 'black'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-black bg-black text-black checked:bg-none checked:ring-4 checked:ring-black focus:outline-none focus:ring-4 focus:ring-black"
+            className="mx-4 h-8 w-8 border-black bg-black text-black checked:bg-none checked:ring-4 checked:ring-black focus:outline-none focus:ring-4 focus:ring-black focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-white">
@@ -32,7 +32,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="white"
             checked={selectedColor === 'white'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-white bg-white text-white checked:bg-none checked:ring-4 checked:ring-white focus:outline-none focus:ring-4 focus:ring-white"
+            className="mx-4 h-8 w-8 border-white bg-white text-white checked:bg-none checked:ring-4 checked:ring-white focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-green">
@@ -42,7 +42,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="green"
             checked={selectedColor === 'green'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-green-color bg-green-color text-green-color checked:bg-none checked:ring-4 checked:ring-green-color focus:outline-none focus:ring-4 focus:ring-green-color"
+            className="mx-4 h-8 w-8 border-green-color bg-green-color text-green-color checked:bg-none checked:ring-4 checked:ring-green-color focus:outline-none focus:ring-4 focus:ring-green-color focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-red">
@@ -52,7 +52,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="red"
             checked={selectedColor === 'red'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-red bg-red text-red checked:bg-none checked:ring-4 checked:ring-red focus:outline-none focus:ring-4 focus:ring-red"
+            className="mx-4 h-8 w-8 border-red bg-red text-red checked:bg-none checked:ring-4 checked:ring-red focus:outline-none focus:ring-4 focus:ring-red focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-blue">
@@ -62,7 +62,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="blue"
             checked={selectedColor === 'blue'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-blue-color bg-blue-color text-blue-color checked:bg-none checked:ring-4 checked:ring-blue-color focus:outline-none focus:ring-4 focus:ring-blue-color"
+            className="mx-4 h-8 w-8 border-blue-color bg-blue-color text-blue-color checked:bg-none checked:ring-4 checked:ring-blue-color focus:outline-none focus:ring-4 focus:ring-blue-color focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-yellow">
@@ -72,7 +72,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="yellow"
             checked={selectedColor === 'yellow'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-yellow bg-yellow text-yellow checked:bg-none checked:ring-4 checked:ring-yellow focus:outline-none focus:ring-4 focus:ring-yellow"
+            className="mx-4 h-8 w-8 border-yellow bg-yellow text-yellow checked:bg-none checked:ring-4 checked:ring-yellow focus:outline-none focus:ring-4 focus:ring-yellow focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-pink">
@@ -82,7 +82,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="pink"
             checked={selectedColor === 'pink'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-pink bg-pink text-pink checked:bg-none checked:ring-4 checked:ring-pink focus:outline-none focus:ring-4 focus:ring-pink"
+            className="mx-4 h-8 w-8 border-pink bg-pink text-pink checked:bg-none checked:ring-4 checked:ring-pink focus:outline-none focus:ring-4 focus:ring-pink focus:ring-offset-0"
           />
         </label>
         <label htmlFor="color-picker-purple">
@@ -92,7 +92,7 @@ function ColorPicker({ selectedColor, onSelectColor }: ColorPickerProps) {
             value="purple"
             checked={selectedColor === 'purple'}
             onChange={handleColorChange}
-            className="mx-4 h-8 w-8 border-purple bg-purple text-purple checked:bg-none checked:ring-4 checked:ring-purple focus:outline-none focus:ring-4 focus:ring-purple"
+            className="mx-4 h-8 w-8 border-purple bg-purple text-purple checked:bg-none checked:ring-4 checked:ring-purple focus:outline-none focus:ring-4 focus:ring-purple focus:ring-offset-0"
           />
         </label>
       </div>
