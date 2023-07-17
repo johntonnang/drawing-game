@@ -10,10 +10,16 @@ export default {
       'bg-blue': '#4570C6',
       white: '#FFF',
       black: '#000',
+      yellow: '#FFFF00',
+      purple: '#800080',
+      pink: '#FFC0CB',
+      'blue-color': '#0000FF',
+      red: '#FF0000',
+      'green-color': '#008000',
     },
     fontFamily: {
       gloria: ['Gloria Hallelujah', 'cursive'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

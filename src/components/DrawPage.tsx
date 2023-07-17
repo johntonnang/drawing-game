@@ -94,8 +94,9 @@ function DrawPage() {
           onMouseMove={handleMouseMove}
         ></canvas>
       </div>
-      <div className="bg-white w-1/2 h-auto mt-4 font-gloria text-xl p-2">
-        Lorem ipsum dolor, sit amet consectetur
+      <div className="rounded-2xl bg-white max-w-[800px] w-2/3 h-auto mt-4 font-gloria text-xl p-4">
+        Lorem ipsum dolor, sit amet consectetur asdas awdas weads wea dsawed cwd
+        wad
       </div>
     </div>
   )

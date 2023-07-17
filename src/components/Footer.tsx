@@ -1,10 +1,10 @@
 function Footer() {
   return (
     <>
-      <div className="bg-blue w-full h-64 absolute bottom-0 opacity-50"></div>
-      <div className="flex items-center justify-center gap-36 absolute bottom-0 w-full text-white">
-        <div className="relative w-[350px] bg-blue h-56 rounded-t-2xl">
-          <div className="absolute top-3 left-3">
+      <div className="absolute bottom-0 h-64 w-full bg-blue opacity-50"></div>
+      <div className="absolute bottom-0 flex w-full items-center justify-center gap-36 text-white">
+        <div className="relative h-56 w-[350px] rounded-t-2xl bg-blue">
+          <div className="absolute left-3 top-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23"
@@ -29,16 +29,16 @@ function Footer() {
               </defs>
             </svg>
           </div>
-          <div className="flex w-full items-center justify-center font-gloria text-2xl mt-4 uppercase">
+          <div className="mt-4 flex w-full items-center justify-center font-gloria text-2xl uppercase">
             <h1>About</h1>
           </div>
-          <div className="flex w-full m-4 items-center justify-center font-gloria text-md">
+          <div className="text-md m-4 flex w-full items-center justify-center font-gloria">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div className="relative w-[350px] bg-blue h-56 rounded-t-2xl">
-          <div className="flex w-full items-center justify-center font-gloria text-2xl mt-4 uppercase">
-            <div className="absolute top-3 left-3">
+        <div className="relative h-56 w-[350px] rounded-t-2xl bg-blue">
+          <div className="mt-4 flex w-full items-center justify-center font-gloria text-2xl uppercase">
+            <div className="absolute left-3 top-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="37"
@@ -61,7 +61,7 @@ function Footer() {
             </div>
             <h1>How to play</h1>
           </div>
-          <div className="flex w-full m-4 items-center justify-center font-gloria text-md">
+          <div className="text-md m-4 flex w-full items-center justify-center font-gloria">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>

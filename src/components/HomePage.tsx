@@ -4,20 +4,20 @@ import Footer from './Footer'
 function HomePage() {
   return (
     <>
-      <div className="flex flex-col h-screen items-center w-full justify-center text-white">
-        <div className="flex w-full items-center justify-center absolute top-16">
+      <div className="flex h-screen w-full flex-col items-center justify-center text-white">
+        <div className="absolute top-16 flex w-full items-center justify-center">
           <h1 className="font-gloria text-8xl drop-shadow-[0_20px_5px_rgba(0,0,0,0.25)]">
             DoodleTime
           </h1>
         </div>
-        <div className="bg-blue h-[15.625rem] flex flex-col items-center justify-center rounded-2xl w-[21.875rem] gap-8">
-          <div className="rounded-2xl flex w-[18.75rem] h-[4.6875rem] bg-green items-center justify-center">
-            <NavLink to="/create" className="text-2xl font-gloria">
+        <div className="flex h-[15.625rem] w-[21.875rem] flex-col items-center justify-center gap-8 rounded-2xl bg-blue">
+          <div className="flex h-[4.6875rem] w-[18.75rem] items-center justify-center rounded-2xl bg-green">
+            <NavLink to="/create" className="font-gloria text-2xl">
               Create game
             </NavLink>
           </div>
-          <div className="rounded-2xl flex items-center justify-center w-[18.75rem] h-[4.6875rem] bg-orange">
-            <NavLink to="/join" className="text-2xl font-gloria">
+          <div className="flex h-[4.6875rem] w-[18.75rem] items-center justify-center rounded-2xl bg-orange">
+            <NavLink to="/join" className="font-gloria text-2xl">
               Join game
             </NavLink>
           </div>

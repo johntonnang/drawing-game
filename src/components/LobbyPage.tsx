@@ -35,15 +35,15 @@ const LobbyPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center min-h-screen text-white font-gloria w-full">
-        <div className="flex flex-col w-full mt-20 items-center">
-          <h1 className="text-4xl font-bold mb-4">Lobby</h1>
-          <div className="flex flex-row w-4/5 gap-10">
-            <div className="w-[20rem] h-[20rem] rounded-2xl bg-blue">
-              <h2 className="flex text-lg font-medium my-2 justify-center">
+      <div className="flex min-h-screen w-full flex-col items-center font-gloria text-white">
+        <div className="mt-20 flex w-full flex-col items-center">
+          <h1 className="mb-4 text-4xl font-bold">Lobby</h1>
+          <div className="flex w-4/5 flex-row gap-10">
+            <div className="h-[20rem] w-[20rem] rounded-2xl bg-blue">
+              <h2 className="my-2 flex justify-center text-lg font-medium">
                 Players
               </h2>
-              <ul className="px-3 py-2 mb-4">
+              <ul className="mb-4 px-3 py-2">
                 {players.map((player, index) => (
                   <li key={index} className="mb-2">
                     {player.name}
@@ -51,25 +51,25 @@ const LobbyPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-[20rem] h-[20rem] rounded-2xl bg-blue">
-              <h2 className="flex text-lg font-medium my-2 justify-center">
+            <div className="h-[20rem] w-[20rem] rounded-2xl bg-blue">
+              <h2 className="my-2 flex justify-center text-lg font-medium">
                 Game ID
               </h2>
-              <p className="px-3 py-2 mb-4">{roomId}</p>
-              <div className="flex h-full justify-center items-center w-full">
+              <p className="mb-4 px-3 py-2">{roomId}</p>
+              <div className="flex h-full w-full items-center justify-center">
                 <button
-                  className="bg-green text-white px-4 py-2 rounded-md"
+                  className="rounded-md bg-green px-4 py-2 text-white"
                   onClick={handleStartGame}
                 >
                   Start game
                 </button>
               </div>
             </div>
-            <div className="w-[20rem] h-[20rem] rounded-2xl bg-blue">
-              <h2 className="flex text-lg font-medium my-2 justify-center">
+            <div className="h-[20rem] w-[20rem] rounded-2xl bg-blue">
+              <h2 className="my-2 flex justify-center text-lg font-medium">
                 Rules
               </h2>
-              <ul className=" px-3 py-2 mb-4">
+              <ul className=" mb-4 px-3 py-2">
                 <li>Time each round: 90 seconds</li>
                 <li>Rounds: 5</li>
               </ul>
