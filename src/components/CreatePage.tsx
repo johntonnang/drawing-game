@@ -1,11 +1,31 @@
+import { doc, setDoc } from 'firebase/firestore'
+import { db } from '../firebase'
 import { useState } from 'react'
 import Footer from './Footer'
+
 function CreatePage() {
   const [userName, setUserName] = useState('')
-  const [id, setId] = useState('')
 
-  const handleSaveAndNavigate = () => {
-    window.location.href = '/lobby'
+  function generateRandomNumber() {
+    const randomNumber = Math.floor(Math.random() * 1000000)
+    const formattedNumber = randomNumber.toString().padStart(6, '0')
+    return formattedNumber
+  }
+  const [roomId] = useState(generateRandomNumber())
+  const handleSaveAndNavigate = async () => {
+    console.log(roomId)
+    const roomRef = doc(db, 'Rooms', roomId)
+
+    try {
+      await setDoc(roomRef, {
+        players: [{ name: userName, leader: true }],
+        roomId: roomId,
+      })
+      localStorage.setItem('userName', userName)
+      window.location.href = '/lobby/?roomId=' + roomId
+    } catch (error) {
+      console.error('Error updating or creating document:', error)
+    }
   }
 
   return (
@@ -22,18 +42,6 @@ function CreatePage() {
               className="border-gray-300 mt-4 w-full rounded-2xl border px-3 py-2 text-black focus:outline-none"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-            />
-          </div>
-          <div className="mt-4 w-64 text-center">
-            <label htmlFor="field2" className="mb-2 font-gloria text-2xl">
-              Enter lobby id:
-            </label>
-            <input
-              id="field2"
-              type="text"
-              className="border-gray-300 mt-4 w-full rounded-2xl border px-3 py-2 text-black focus:outline-none"
-              value={id}
-              onChange={(e) => setId(e.target.value)}
             />
           </div>
           <button

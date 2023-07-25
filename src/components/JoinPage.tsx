@@ -1,11 +1,57 @@
-import { useState } from 'react'
+import { collection, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore'
+import { db } from '../firebase'
 import Footer from './Footer'
+import { useState, useEffect } from 'react'
+
 function JoinPage() {
+  const [roomId, setRoomId] = useState('')
+
+  const fetchPost = async () => {
+    await getDocs(collection(db, 'Rooms')).then((querySnapshot) => {
+      querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        players: doc.data().players,
+        roomId: doc.data().roomId,
+      }))
+    })
+  }
+
+  useEffect(() => {
+    fetchPost()
+  }, [])
   const [userName, setUserName] = useState('')
   const [id, setId] = useState('')
 
-  const handleSaveAndNavigate = () => {
-    window.location.href = '/lobby'
+  const handleSaveAndNavigate = async () => {
+    await getDocs(collection(db, 'Rooms')).then(async (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        players: doc.data().players,
+        roomId: doc.data().roomId,
+      }))
+      for (const i in newData) {
+        if (id === newData[i].roomId) {
+          setRoomId(newData[i].roomId)
+          const roomRef = doc(db, 'Rooms', newData[i].roomId)
+          console.log(newData[i].roomId)
+          const roomSnapshot = await getDoc(roomRef)
+
+          if (roomSnapshot.exists()) {
+            const roomData = roomSnapshot.data()
+            const updatedPlayers = [
+              ...roomData.players,
+              { name: userName, leader: false },
+            ]
+            await updateDoc(roomRef, { players: updatedPlayers })
+          } else {
+            console.error('Room document does not exist.')
+          }
+          localStorage.setItem('userName', userName)
+          window.location.href = '/lobby/?roomId=' + newData[i].roomId
+        }
+      }
+    })
+    console.log(roomId)
   }
 
   return (

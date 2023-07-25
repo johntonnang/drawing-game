@@ -1,9 +1,13 @@
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, onSnapshot, doc } from 'firebase/firestore'
 import { db } from '../firebase'
 import { useState, useEffect } from 'react'
 import Footer from './Footer'
+import star from '../star.svg'
 
 const LobbyPage = () => {
+  const searchParams = new URLSearchParams(window.location.search)
+  const URLroomId = searchParams.get('roomId')
+  console.log(URLroomId)
   const handleStartGame = () => {
     console.log('Spelet har startats')
     window.location.href = '/draw'
@@ -23,15 +27,34 @@ const LobbyPage = () => {
         players: doc.data().players,
         roomId: doc.data().roomId,
       }))
+      for (const i in newData) {
+        if (URLroomId === newData[i].roomId) {
+          setPlayers(newData[i].players)
+          setRoomId(newData[i].roomId)
+        }
+      }
       console.log(newData[0].roomId)
-      setPlayers(newData[0].players)
-      setRoomId(newData[0].roomId)
     })
   }
 
   useEffect(() => {
     fetchPost()
-  }, [])
+    if (!roomId) {
+      console.log('No roomId provided.')
+      return
+    }
+    const roomRef = doc(db, 'Rooms', roomId)
+
+    onSnapshot(roomRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const roomData = snapshot.data()
+        console.log('Room Data:', roomData)
+        setPlayers(roomData.players)
+      } else {
+        console.log('Room does not exist.')
+      }
+    })
+  }, [roomId])
 
   return (
     <>
@@ -45,8 +68,13 @@ const LobbyPage = () => {
               </h2>
               <ul className="mb-4 px-3 py-2">
                 {players.map((player, index) => (
-                  <li key={index} className="mb-2">
-                    {player.name}
+                  <li key={index} className="mb-2 flex items-center">
+                    <span className="mr-2">{player.name}</span>
+                    {player.name === localStorage.getItem('userName') ? (
+                      <img src={star} alt="Star" className="h-5 w-5" />
+                    ) : (
+                      <></>
+                    )}
                   </li>
                 ))}
               </ul>
